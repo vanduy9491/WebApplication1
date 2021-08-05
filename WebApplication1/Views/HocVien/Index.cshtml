@@ -1,0 +1,49 @@
+﻿@model Lop
+
+<table>
+    <thead >
+        <tr>
+            <th style="width: 5%">
+                #
+            </th>
+            <th style="width: 50%">
+                Họ Tên
+            </th>
+            <th style="width: 25%" class="text-center">
+                Ngày Sinh
+            </th>
+            <th style="width: 10%" class="text-center">
+                Giới Tính
+            </th>
+            <th style="width: 5%" class="text-center">
+                Email
+            </th>
+            <th style="width: 5%" class="text-center">
+                Lớp
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (HocVien hv in Model.HocViens)
+        {
+            <tr>
+                <td>@hv.MaHV</td>
+                <td>@hv.HoVaTen</td>
+                <td>@hv.NgaySinh</td>
+                <td >
+                    @if (hv.GioiTinh)
+                    {
+                        <span>Nam</span>
+                    }
+                    else
+                    {
+                        <span >Nữ</span>
+                    }
+                </td>
+                <td >Email</td>
+                <td>Lớp</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
